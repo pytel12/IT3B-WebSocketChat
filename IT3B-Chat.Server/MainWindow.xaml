@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <ListView Grid.Column="0" ItemsSource="{Binding MessageLog}" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Zpráva z klienta" DisplayMemberBinding="{Binding}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView Grid.Column="1" ItemsSource="{Binding ConnectionLog}" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Připojení/odpojení klientů" DisplayMemberBinding="{Binding}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

@@ -27,5 +27,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
+            <TextBox x:Name="MessageTextBox" Width="200" Margin="0,0,10,0" />
+            <Button Content="Odeslat zprávu" Click="SendMessageButton_Click" />
+        </StackPanel>
     </Grid>
 </Window>

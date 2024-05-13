@@ -13,6 +13,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 
+
 namespace IT3B_Chat.Server
 {
     /// <summary>
@@ -65,6 +66,20 @@ namespace IT3B_Chat.Server
             for (int i = 1; i <= 3; i++)
             {
                 connectionLog.Add($"Klient {i} se odpojil.");
+            }
+        }
+
+        private void SendMessageButton_Click(object sender, RoutedEventArgs e)
+        {
+            string message = MessageTextBox.Text;
+            if (!string.IsNullOrEmpty(message))
+            {
+                messageLog.Add($"Má zpráva: {message}");
+                MessageTextBox.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Zadejte prosím zprávu.");
             }
         }
     }
